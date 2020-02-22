@@ -1,0 +1,42 @@
+
+
+
+<%= render partial:"profile" %>
+
+<%= render partial:"books/new" %>
+
+
+
+
+
+
+
+
+
+
+
+
+<h1>Users</h1>
+
+
+
+<table>
+ <thead>
+ <tr>
+ 	<th>image</th>
+ 	<th>name</th>
+ </tr>
+ </thead>
+ <tbody>
+<% @users.each do |user| %>
+
+<tr>
+<td><%= user.profile_image %></td>
+<td><%= user.name %></td>
+<td><%=link_to "show", user_path(users.id) %></td>
+
+</tr>
+<% end %>
+</tbody>
+</table>
+

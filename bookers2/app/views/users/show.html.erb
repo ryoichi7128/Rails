@@ -1,0 +1,30 @@
+
+
+<%= render partial:"profile" %>
+
+<%= render partial:"books/new" %>
+
+
+
+<h1>Books</h1>
+
+<table>
+ <thead>
+ <tr>
+ 	<th>Title</th>
+ 	<th>opinion</th>
+ </tr>
+ </thead>
+ <tbody>
+<% @books.each do |book| %>
+<% @users.each do |user| %>
+<tr>
+<td><%= @user.profile_image_id %></td>
+<td><%= link_to, book.title ,book_path %></td>
+<td><%= book.body %></td>
+</tr>
+<% end %>
+<% end %>
+</tbody>
+</table>
+
