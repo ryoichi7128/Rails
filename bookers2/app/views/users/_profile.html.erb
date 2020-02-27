@@ -1,10 +1,26 @@
+
 <h1>User info</h1>
-<%= @user.profile_image_id %></p>
-<p>name <%= @user.name %></p>
-<p>introduction <%= @user.introduciton %></p>
+
+<%= attachment_image_tag user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg", size: '50x50' %>
+
+<table class= "table">
+ <tbody>
+   <tr><th>name</th> <th><%= user.name %></th></tr>
+
+   <tr><th>introduction</th> <th><%= user.introduction %></th></tr>
+ </tbody>
+</table>
+
+<div class="row">
+
+  <%= link_to edit_user_path(user.id), class: "btn btn-default" do %>
+
+  <span class= "glyphicon glyphicon-wrench" style="width:250px;"></span>
+
+  <% end %>
+
+</div>
 
 
-
-<%= link_to("編集",edit_user_path(@user.id)) %>
 
 

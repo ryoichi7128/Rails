@@ -3,6 +3,7 @@
 
 <% if @user.errors.any? %>
   <div class="alert alert-warning">
+  	<h2><%= @user.errors.count %>error!!!</h2>
     <ul>
       <% @user.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -19,7 +20,6 @@
 <%= f.text_field :name %>
 
 <h4>Image</h4>
-<%= attachment_image_tag @user, :profile_image, :fill, 60, 60, class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg"%>
 
 <%= f.attachment_field :profile_image %>
 

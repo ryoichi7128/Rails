@@ -13,10 +13,7 @@
 <% end %>
 
 
-
 <%= form_for(@book) do |f| %>
-
-
 
 <h4>Title</h4>
 
@@ -26,9 +23,7 @@
 
 <%= f.text_area :body %>
 
-<p>
-<%= f.submit "create Book" %>
-</p>
+<p><%= f.submit "create Book" %></p>
 
 <% end %>
 

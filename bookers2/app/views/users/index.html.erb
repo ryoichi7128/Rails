@@ -1,42 +1,47 @@
 
+<div class="container">
+
+<div class="row">
+
+<div class="col-xs-3" >
+
+<%= render 'users/profile',user: @user %>
+
+<%= render "books/new",book: @book %>
+
+</div>
 
 
-<%= render partial:"profile" %>
-
-<%= render partial:"books/new" %>
-
-
-
-
-
-
-
-
-
-
-
+<div class="col-xs-9">
 
 <h1>Users</h1>
 
-
-
-<table>
+<table class= "table" >
  <thead>
- <tr>
+  <tr>
  	<th>image</th>
  	<th>name</th>
- </tr>
+ 	<th colspan="3"></th>
+  </tr>
  </thead>
+
  <tbody>
-<% @users.each do |user| %>
 
-<tr>
-<td><%= user.profile_image %></td>
-<td><%= user.name %></td>
-<td><%=link_to "show", user_path(users.id) %></td>
+  <% @users.each do |user| %>
 
-</tr>
-<% end %>
-</tbody>
+  <tr>
+   <td><%= attachment_image_tag user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg", size:'50x50' %></td>
+   <td><%= user.name %></td>
+   <td><%=link_to "Show", user_path(user.id) %></td>
+  </tr>
+
+  <% end %>
+
+ </tbody>
 </table>
+
+</div>
+
+</div>
+</div>
 
